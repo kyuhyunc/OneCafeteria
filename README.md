@@ -1,7 +1,7 @@
 OneCafeteria 
 ==============
 
-Team: COJI 
+Team: COJI.
 Microsoft Hackathon 2017.
 
 ## To run this project locally
