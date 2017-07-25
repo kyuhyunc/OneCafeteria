@@ -1,6 +1,6 @@
 angular.module('starter.services', [])
 
-.factory('Restaurants', function() {
+.factory('Restaurants', function($http) {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
@@ -49,7 +49,7 @@ angular.module('starter.services', [])
 
   return {
     all: function() {
-      return restaurants;
+      return $http.get('http://onecafeteria.azurewebsites.net/api/restaurant/getallrestaurants');
     },
     get: function(id) {
       for (var i = 0; i < restaurants.length; i++) {
