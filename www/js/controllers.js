@@ -12,6 +12,9 @@ angular.module('starter.controllers', [])
   $scope.goToChatBot = function() {
     $state.go('chats');
   }
+  $scope.goToDetails = function(restaurant) {
+    $state.go('details', { id: restaurant.id });
+  }
 })
 
 .controller('ChatsCtrl', function($scope, ChatBot) {
@@ -50,8 +53,8 @@ angular.module('starter.controllers', [])
   
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
+.controller('DetailsCtrl', function($scope, $stateParams) {
+  $scope.restaurant = $stateParams.id;
 })
 
 .controller('AccountCtrl', function($scope) {

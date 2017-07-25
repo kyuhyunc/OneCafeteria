@@ -7,7 +7,7 @@
     </ion-nav-bar>
   <ion-content class="padding">
     <div ng-repeat="restaurant in restaurants">
-      <div class="card row">
+      <div class="card row" ng-click="goToDetails(restaurant)">
         <img ng-src="img/ionic.png">
         <div class="col">
           <div class="row">

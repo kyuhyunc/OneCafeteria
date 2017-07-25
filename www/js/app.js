@@ -42,6 +42,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     templateUrl: 'templates/chats.html',
     controller: 'ChatsCtrl'
   }) 
+  .state('details', {
+    url: '/details/:id',
+    templateUrl: 'templates/details.html',
+    controller: 'DetailsCtrl'
+  })
 
   ;
 
