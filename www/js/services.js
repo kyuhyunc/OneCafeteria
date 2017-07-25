@@ -50,11 +50,19 @@ angular.module('starter.services', [])
   return {
     all: function() {
       return restaurants;
+    },
+    get: function(id) {
+      for (var i = 0; i < restaurants.length; i++) {
+        if (restaurants[i].id == id) {
+          return restaurants[i];
+        }
+      }
+
+      return null;
     }
   };
 
 })
-
 .factory('ChatBot', function() {
   // Might use a resource here that returns a JSON array
 

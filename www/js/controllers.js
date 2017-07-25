@@ -1,5 +1,11 @@
 angular.module('starter.controllers', [])
 
+.controller('LoadingCtrl', function($scope, $state) {
+  $scope.goToList = function() {
+    $state.go('list');
+  }
+})
+
 .controller('ListCtrl', function($scope, $state, Restaurants) {
   $scope.restaurants = Restaurants.all();
   $scope.getStars = function(rating) {
@@ -53,12 +59,10 @@ angular.module('starter.controllers', [])
   
 })
 
-.controller('DetailsCtrl', function($scope, $stateParams) {
-  $scope.restaurant = $stateParams.id;
-})
+.controller('DetailsCtrl', function($scope, $stateParams, Restaurants) {
+  $scope.restaurant = Restaurants.get($stateParams.id);
 
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
+  if ($scope.restaurant != null) {
+
+  }
 });

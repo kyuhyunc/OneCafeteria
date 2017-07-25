@@ -32,6 +32,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $stateProvider
 
   // setup an abstract state for the tabs directive
+  .state('loading', {
+    url: '/loading',
+    templateUrl: 'templates/loading.html',
+    controller: 'LoadingCtrl'
+  })
   .state('list', {
     url: '/list',
     templateUrl: 'templates/list.html',
@@ -46,11 +51,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/details/:id',
     templateUrl: 'templates/details.html',
     controller: 'DetailsCtrl'
-  })
-
-  ;
+  });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/list');
+  $urlRouterProvider.otherwise('/loading');
 
 });
