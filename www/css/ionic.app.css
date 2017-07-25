@@ -9334,7 +9334,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   color: black;
   background-color: #C7C7CC; }
 
-.messages span {
+span {
   background: #007AFF;
   display: inline-block;
   color: white;
@@ -9342,49 +9342,3 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   border-radius: 10px;
   text-align: left;
   max-width: 240px; }
-
-
-
-/* Empty. Add your own CSS if you like */
-span.stars, span.stars span {
-    display: block;
-   /* Download the star image here: http://stackoverflow.com/questions/1987524/turn-a-number-into-star-rating-display-using-jquery-and-css */
-    background: url('https://apppresser.com/wp-content/uploads/2015/11/stars.png') 0 -16px repeat-x;
-    width: 80px;
-    height: 16px;
-}
-
-span.stars span {
-    background-position: 0 0;
-}
-
-div.stars, div.stars div {
-    display: block;
-   /* Download the star image here: http://stackoverflow.com/questions/1987524/turn-a-number-into-star-rating-display-using-jquery-and-css */
-    background: url('https://apppresser.com/wp-content/uploads/2015/11/stars.png') 0 -16px repeat-x;
-    width: 80px;
-    height: 16px;
-}
-
-div.stars div {
-    background-position: 0 0;
-}
-
-.fixedCircle {
-	position: fixed;
-	bottom: 5px;
-	right: 5px;
-	border-radius: 50%;
-	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26) !important;
-	text-align: middle;
-	vertical-align: middle;
-	padding: 0px;
-	line-height: 100px;
-	width: 100px;
-}
-
-.fixedCircle:hover{
-  -webkit-transform: translate3d(0, -1px, 0)  !important;
-  transform: translate3d(0, -1px, 0) !important;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4) !important;
-}

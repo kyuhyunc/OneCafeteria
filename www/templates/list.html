@@ -1,0 +1,29 @@
+<ion-view name="Restaurants">
+    <ion-nav-bar class="bar-stable">
+     <ion-nav-title>Restaurants</ion-nav-title>
+
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+  <ion-content class="padding">
+    <div ng-repeat="restaurant in restaurants">
+      <div class="card row">
+        <img ng-src="img/ionic.png">
+        <div class="col">
+          <div class="row">
+            <h3>{{restaurant.name}}</h3>
+          </div>
+          <div class="row">
+            <div>{{restaurant.location}}</div>
+          </div>
+          <div class="row">
+            <span class="stars">
+              <span ng-style="{ 'width': getStars(restaurant.rating) }">
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+  <div class="fixedCircle button button-positive" ng-click="goToChatBot()">Chat</div>
+</ion-view>

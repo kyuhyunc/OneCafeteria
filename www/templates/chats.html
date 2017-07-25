@@ -1,0 +1,48 @@
+<ion-view name="Chats">
+    <ion-nav-bar class="bar-stable">
+     <ion-nav-title>ChatBot</ion-nav-title>
+
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+  <ion-content class="padding">
+      <div ng-repeat="message in messages"
+           ng-class="{other: message.sender != 'bot'}"
+           class="messages">
+
+        <div class="message">
+          <span>
+          {{ message.text }}
+          <div ng-repeat="restaurant in message.restaurants" style="padding-top:0px">
+            <div class="card row">
+              <img ng-src="img/ionic.png" style="width:50px;height:50px">
+              <div class="col" style="padding-top:0px;">
+                <div class="row" style="padding-top:0px">
+                  <h5 style="margin:0px">{{restaurant.name}}</h5>
+                </div>
+                <div class="row">
+                  <h6 style="margin:0px">{{restaurant.location}}</h6>
+                </div>
+                <div class="row">
+                  <div class="stars">
+                    <div ng-style="{ 'width': getStars(restaurant.rating) }"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </span>
+
+        </div>
+      </div>
+  </ion-content>
+
+  <ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
+      <label class="item-input-wrapper">
+        <input type="text" placeholder="Type your message" on-return="sendMessage(); closeKeyboard()" ng-model="newMessage" on-focus="inputUp()" on-blur="inputDown()" />
+      </label>
+      <button class="button button-clear" ng-click="sendMessage()">
+        Send
+      </button>
+    </ion-footer-bar>
+</ion-view>
