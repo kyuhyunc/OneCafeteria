@@ -7,7 +7,10 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ListCtrl', function($scope, $state, Restaurants) {
-  $scope.restaurants = Restaurants.all();
+  $scope.restaurants = [];
+  Restaurants.all().then(function(response) {
+    $scope.restaurants = response.data;
+  })
   $scope.getStars = function(rating) {
     // Get the value
     var val = parseFloat(rating);
