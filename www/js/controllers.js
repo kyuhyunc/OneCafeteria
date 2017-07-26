@@ -63,9 +63,22 @@ angular.module('starter.controllers', [])
 })
 
 .controller('DetailsCtrl', function($scope, $stateParams, Restaurants) {
-  $scope.restaurant = Restaurants.get($stateParams.id);
+  var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
-  if ($scope.restaurant != null) {
-
-  }
+  var date = new Date();
+  $scope.year = date.getFullYear();
+  $scope.month = months[date.getMonth()];
+  $scope.date = date.getDate();
+  $scope.day = days[date.getDay()];
+  
+  $scope.restaurant;
+  $scope.restaurant = Restaurants.get($stateParams.id).then(function(response) {
+    $scope.restaurant = response.data;
+    $scope.restaurant.menus.forEach(function(menu) {
+      if ($scope.day.toLowerCase() === menu.day.toLowerCase()) {
+        $scope.todayMenu = menu;
+      }
+    })
+  })  
 });

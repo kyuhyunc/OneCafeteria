@@ -52,13 +52,14 @@ angular.module('starter.services', [])
       return $http.get('http://onecafeteria.azurewebsites.net/api/restaurant/getallrestaurants');
     },
     get: function(id) {
-      for (var i = 0; i < restaurants.length; i++) {
-        if (restaurants[i].id == id) {
-          return restaurants[i];
-        }
-      }
+      // for (var i = 0; i < restaurants.length; i++) {
+      //   if (restaurants[i].id == id) {
+      //     return restaurants[i];
+      //   }
+      // }
+      // return null;
 
-      return null;
+      return $http.get('http://onecafeteria.azurewebsites.net/api/restaurant/getrestaurantdetail/' + id);    
     }
   };
 

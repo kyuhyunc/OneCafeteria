@@ -6,6 +6,61 @@
       </ion-nav-back-button>
     </ion-nav-bar>
   <ion-content class="padding">
-      <h2>{{restaurantId}}</h2>
+    <div class="card" style="margin-top:0px !important; box-shadow: 2px 2px 5px grey;">
+      <div class="item item-body crop-container">
+        <img class="full-image crop-container" ng-src="img/pasta.png">  
+      </div>
+      <div style="margin-top:20px; padding-left: 18px">
+        <h2 align="left">{{restaurant.name}}</h2>
+      </div> 
+      <div style="margin-top:20px; padding-left: 18px">
+        <h4 align="left">{{day}}, {{month}} {{date}} {{year}}</h4>
+      </div> 
+    </div>
+    <div>
+      <div class="row">
+        <div class="col-34 col-spacer"> 
+            <h4>Name</h4>
+          </div>
+          <div class="col-40 col-spacer"> 
+            <h4>Description</h4>
+          </div>
+          <div class="col-10 col-spacer">
+            <h4>Price</h4>
+          </div>
+      </div>
+      <div ng-repeat="food in todayMenu.foods">
+        <div class="row">
+          <div class="col-34 col-spacer"> 
+            <h5>{{food.name}}</h5>
+          </div>
+          <div class="col-40 col-spacer"> 
+            <h5>{{food.description}}</h5>
+          </div>
+          <div class="col-10 col-spacer">
+            <div ng-repeat="price in food.price">
+              <h5>{{price}}</h5>
+            </div> 
+          </div>         
+        </div>
+      </div>
+    </div>
   </ion-content>
 </ion-view>
+
+<style scoped>
+.crop-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+img.crop-container {
+  margin-top: -30%;
+  margin-bottom: -70%;
+}
+
+.col-spacer {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+</style>
