@@ -73,7 +73,7 @@ angular.module('starter.controllers', [])
   $scope.day = days[date.getDay()];
   
   $scope.restaurant;
-  $scope.restaurant = Restaurants.get($stateParams.id).then(function(response) {
+  Restaurants.get($stateParams.id).then(function(response) {
     $scope.restaurant = response.data;
     $scope.restaurant.menus.forEach(function(menu) {
       if ($scope.day.toLowerCase() === menu.day.toLowerCase()) {

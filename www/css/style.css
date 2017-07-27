@@ -9388,3 +9388,18 @@ div.stars div {
   transform: translate3d(0, -1px, 0) !important;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4) !important;
 }
+
+.crop-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+img.crop-container {
+  margin-top: -30%;
+  margin-bottom: -70%;
+}
+
+.col-spacer {
+  margin-left: 5px;
+  margin-right: 5px;
+}
